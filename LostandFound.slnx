@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="LostAndFound.Core/LostAndFound.Core.csproj" />
+    <Project Path="LostAndFound.Infrastructure/LostAndFound.Infrastructure.csproj" />
+    <Project Path="LostandFound/LostAndFound.Ui.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+</Solution>
