@@ -1,0 +1,17 @@
+﻿@using LostAndFound.Core.DTO
+@model LoginDTO
+<form asp-action="Login" method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Email" class="form-control" />
+    <span asp-validation-for="Email"></span>
+
+    <input asp-for="Password" class="form-control" />
+    <span asp-validation-for="Password"></span>
+
+    <div class="form-check">
+        <input asp-for="RememberMe" class="form-check-input" />
+        <label asp-for="RememberMe" class="form-check-label">Remember me</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>

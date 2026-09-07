@@ -1,0 +1,13 @@
+C:\aspnetcore\LostandFound\LostAndFound.Core\bin\Debug\net10.0\LostAndFound.Core.deps.json
+C:\aspnetcore\LostandFound\LostAndFound.Core\bin\Debug\net10.0\LostAndFound.Core.dll
+C:\aspnetcore\LostandFound\LostAndFound.Core\bin\Debug\net10.0\LostAndFound.Core.pdb
+C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\LostAndFound.Core.csproj.AssemblyReference.cache
+C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\LostAndFound.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\LostAndFound.Core.AssemblyInfoInputs.cache
+C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\LostAndFound.Core.AssemblyInfo.cs
+C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\LostAndFound.Core.csproj.CoreCompileInputs.cache
+C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\LostAndFound.Core.sourcelink.json
+C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\LostAndFound.Core.dll
+C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\refint\LostAndFound.Core.dll
+C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\LostAndFound.Core.pdb
+C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\ref\LostAndFound.Core.dll
