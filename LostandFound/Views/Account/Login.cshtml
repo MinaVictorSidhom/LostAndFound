@@ -1,17 +1,50 @@
-﻿@using LostAndFound.Core.DTO
+@using LostAndFound.Core.DTO
 @model LoginDTO
-<form asp-action="Login" method="post">
-    <div asp-validation-summary="All"></div>
-    <input asp-for="Email" class="form-control" />
-    <span asp-validation-for="Email"></span>
+@{
+    ViewData["Title"] = "Welcome back";
+}
 
-    <input asp-for="Password" class="form-control" />
-    <span asp-validation-for="Password"></span>
+<link rel="stylesheet" href="~/css/StyleSheet.css" />
 
-    <div class="form-check">
-        <input asp-for="RememberMe" class="form-check-input" />
-        <label asp-for="RememberMe" class="form-check-label">Remember me</label>
-    </div>
+<main class="auth-page">
+    <a class="brand" asp-controller="Home" asp-action="Index" aria-label="Lost and Found home">
+        <span class="brand-mark" aria-hidden="true">⌕</span>
+        <span>Lost &amp; Found</span>
+    </a>
 
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>
+    <section class="auth-card" aria-labelledby="login-heading">
+        <div class="auth-heading">
+            <p class="eyebrow">Welcome back</p>
+            <h1 id="login-heading">Sign in to your account</h1>
+            <p>Track your reports and help reunite people with what they have lost.</p>
+        </div>
+
+        <form asp-action="Login" asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" novalidate>
+            <div asp-validation-summary="ModelOnly" class="validation-message" role="alert"></div>
+
+            <div class="field-group">
+                <label asp-for="Email">Email address</label>
+                <input asp-for="Email" type="email" autocomplete="email" placeholder="you@example.com" />
+                <span asp-validation-for="Email" class="validation-message"></span>
+            </div>
+
+            <div class="field-group">
+                <div class="label-row">
+                    <label asp-for="Password">Password</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <input asp-for="Password" type="password" autocomplete="current-password" placeholder="Enter your password" />
+                <span asp-validation-for="Password" class="validation-message"></span>
+            </div>
+
+            <label class="check-row">
+                <input asp-for="RememberMe" />
+                <span>Keep me signed in</span>
+            </label>
+
+            <button type="submit" class="auth-submit">Sign in <span aria-hidden="true">→</span></button>
+        </form>
+
+        <p class="auth-footer">New to Lost &amp; Found? <a asp-controller="Account" asp-action="Register">Create an account</a></p>
+    </section>
+</main>

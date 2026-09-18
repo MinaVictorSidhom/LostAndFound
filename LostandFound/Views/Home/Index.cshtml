@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Lost and Found";
+}
+
+<link rel="stylesheet" href="~/css/StyleSheet.css" />
+
+<main class="welcome-page">
+    <section class="welcome-card">
+        <div class="welcome-icon" aria-hidden="true">⌕</div>
+        <h1>Lost and Found</h1>
+        <p>A simple place to reconnect people with the belongings that matter to them.</p>
+        <nav class="welcome-actions" aria-label="Account actions">
+            <a class="button-primary" asp-controller="Account" asp-action="Login">Log in</a>
+            <a class="button-secondary" asp-controller="Account" asp-action="Register">Create an account</a>
+        </nav>
+    </section>
+</main>
