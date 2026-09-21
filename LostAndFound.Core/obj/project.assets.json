@@ -1001,11 +1001,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\aspnetcore\\LostandFound\\LostAndFound.Core\\LostAndFound.Core.csproj",
+      "projectUniqueName": "C:\\aspnetcore\\LostAndFound\\LostAndFound.Core\\LostAndFound.Core.csproj",
       "projectName": "LostAndFound.Core",
-      "projectPath": "C:\\aspnetcore\\LostandFound\\LostAndFound.Core\\LostAndFound.Core.csproj",
+      "projectPath": "C:\\aspnetcore\\LostAndFound\\LostAndFound.Core\\LostAndFound.Core.csproj",
       "packagesPath": "C:\\Users\\MinaVictor\\.nuget\\packages\\",
-      "outputPath": "C:\\aspnetcore\\LostandFound\\LostAndFound.Core\\obj\\",
+      "outputPath": "C:\\aspnetcore\\LostAndFound\\LostAndFound.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1348,13 +1348,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
-    }
-  ]
+  }
 }

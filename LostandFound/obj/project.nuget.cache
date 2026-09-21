@@ -53,15 +53,5 @@
     "C:\\Users\\MinaVictor\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.11\\system.security.cryptography.pkcs.9.0.11.nupkg.sha512",
     "C:\\Users\\MinaVictor\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.11\\system.security.cryptography.protecteddata.9.0.11.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
-      "projectPath": "C:\\aspnetcore\\LostandFound\\LostandFound\\LostAndFound.Ui.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\aspnetcore\\LostandFound\\LostandFound\\LostAndFound.Ui.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }

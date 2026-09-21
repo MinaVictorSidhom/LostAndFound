@@ -27,6 +27,13 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 var app = builder.Build();
 
+// Keep the local development database aligned with the EF Core model before requests use it.
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    await db.Database.MigrateAsync();
+}
+
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication(); // MUST come before UseAuthorization
