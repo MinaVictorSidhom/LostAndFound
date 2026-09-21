@@ -47,8 +47,13 @@ public class PostsController : Controller
 
         var post = new ItemPost
         {
-            UserId = user.Id, Type = model.Type, Title = model.Title.Trim(), Category = model.Category.Trim(),
-            Description = model.Description.Trim(), Location = model.Location.Trim(), ItemDate = model.ItemDate!.Value,
+            UserId = user.Id,
+            Type = model.Type,
+            Title = model.Title.Trim(),
+            Category = model.Category.Trim(),
+            Description = model.Description.Trim(),
+            Location = model.Location.Trim(),
+            ItemDate = model.ItemDate!.Value,
             ContactPreference = model.ContactPreference
         };
         _db.ItemPosts.Add(post);
@@ -77,8 +82,13 @@ public class PostsController : Controller
         if (post is null) return NotFound();
         return View(new CreateItemPostViewModel
         {
-            Type = post.Type, Title = post.Title, Category = post.Category, Description = post.Description,
-            Location = post.Location, ItemDate = post.ItemDate, ContactPreference = post.ContactPreference
+            Type = post.Type,
+            Title = post.Title,
+            Category = post.Category,
+            Description = post.Description,
+            Location = post.Location,
+            ItemDate = post.ItemDate,
+            ContactPreference = post.ContactPreference
         });
     }
 
@@ -141,7 +151,12 @@ public class PostsController : Controller
             var fileName = $"{Guid.NewGuid():N}{Path.GetExtension(photo.FileName).ToLowerInvariant()}";
             await using var stream = System.IO.File.Create(Path.Combine(folder, fileName));
             await photo.CopyToAsync(stream);
-            post.Images.Add(new ItemPostImage { Path = $"/uploads/posts/{post.Id}/{fileName}" });
+
+            var image = new ItemPostImage { Path = $"/uploads/posts/{post.Id}/{fileName}" };
+            post.Images.Add(image);
+            // The image already has a Guid key, so EF Core would assume the row exists and send an UPDATE
+            // (0 rows affected -> DbUpdateConcurrencyException). Adding it explicitly makes EF INSERT it.
+            _db.Add(image);
         }
     }
 }
