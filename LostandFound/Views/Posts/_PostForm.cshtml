@@ -1,10 +1,79 @@
 @using LostAndFound.Core.Domain.Posts
 @using LostAndFound.Ui.Models.Posts
 @model CreateItemPostViewModel
+
+<div asp-validation-summary="ModelOnly" class="validation-message" role="alert"></div>
+
+<div class="post-grid">
+    <div class="field-group">
+        <label asp-for="Type">Report type</label>
+        <select asp-for="Type" asp-items="Html.GetEnumSelectList<PostType>()"></select>
+        <span asp-validation-for="Type" class="validation-message"></span>
+    </div>
+    <div class="field-group">
+        <label asp-for="Category">Category</label>
+        <select asp-for="Category">
+            <option disabled>Choose a category</option>
+            <option>Documents &amp; wallets</option>
+            <option>Keys</option>
+            <option>Electronics</option>
+            <option>Clothing</option>
+            <option>Pets</option>
+            <option>Other</option>
+        </select>
+        <span asp-validation-for="Category" class="validation-message"></span>
+    </div>
+</div>
+
+<div class="field-group">
+    <label asp-for="Title">Item title</label>
+    <input asp-for="Title" placeholder="e.g. Black leather wallet" />
+    <span asp-validation-for="Title" class="validation-message"></span>
+</div>
+
+<div class="post-grid">
+    <div class="field-group">
+        <label asp-for="ItemDate">Date lost or found</label>
+        <input asp-for="ItemDate" type="date" />
+        <span asp-validation-for="ItemDate" class="validation-message"></span>
+    </div>
+    <div class="field-group">
+        <label asp-for="Location">Location</label>
+        <input asp-for="Location" placeholder="e.g. Main library, ground floor" />
+        <span asp-validation-for="Location" class="validation-message"></span>
+    </div>
+</div>
+
+<div class="field-group">
+    <label asp-for="Description">Description</label>
+    <textarea asp-for="Description" placeholder="Color, brand, condition, and general distinguishing features."></textarea>
+    <span asp-validation-for="Description" class="validation-message"></span>
+</div>
+
+<div class="post-grid">
+    <div class="field-group">
+        <label asp-for="Photos">Photos (optional)</label>
+        <input asp-for="Photos" type="file" accept="image/jpeg,image/png,image/webp" multiple />
+        <span asp-validation-for="Photos" class="validation-message"></span>
+        <small>Up to 5 JPG, PNG, or WebP photos, 5 MB each.</small>
+    </div>
+    <div class="field-group">
+        <label asp-for="ContactPreference">Contact preference</label>
+        <select asp-for="ContactPreference" asp-items="Html.GetEnumSelectList<ContactPreference>()"></select>
+        <span asp-validation-for="ContactPreference" class="validation-message"></span>
+    </div>
+</div>
+
+<div class="privacy-note">
+    <strong>Keep proof private.</strong> Do not publish card numbers, document details, or every unique feature. Use those details to confirm ownership privately.
+</div>
+@* @using LostAndFound.Core.Domain.Posts
+@using LostAndFound.Ui.Models.Posts
+@model CreateItemPostViewModel
 <div asp-validation-summary="ModelOnly" class="validation-message" role="alert"></div>
 <div class="post-grid"><div class="field-group"><label asp-for="Type">Report type</label><select asp-for="Type" asp-items="Html.GetEnumSelectList<PostType>()"></select><span asp-validation-for="Type" class="validation-message"></span></div><div class="field-group"><label asp-for="Category">Category</label><select asp-for="Category"><option value="">Choose a category</option><option>Documents &amp; wallets</option><option>Keys</option><option>Electronics</option><option>Clothing</option><option>Pets</option><option>Other</option></select><span asp-validation-for="Category" class="validation-message"></span></div></div>
 <div class="field-group"><label asp-for="Title">Item title</label><input asp-for="Title" placeholder="e.g. Black leather wallet" /><span asp-validation-for="Title" class="validation-message"></span></div>
 <div class="post-grid"><div class="field-group"><label asp-for="ItemDate">Date lost or found</label><input asp-for="ItemDate" type="date" /><span asp-validation-for="ItemDate" class="validation-message"></span></div><div class="field-group"><label asp-for="Location">Location</label><input asp-for="Location" placeholder="e.g. Main library, ground floor" /><span asp-validation-for="Location" class="validation-message"></span></div></div>
 <div class="field-group"><label asp-for="Description">Description</label><textarea asp-for="Description" placeholder="Color, brand, condition, and general distinguishing features."></textarea><span asp-validation-for="Description" class="validation-message"></span></div>
 <div class="post-grid"><div class="field-group"><label asp-for="Photos">Photos (optional)</label><input asp-for="Photos" type="file" accept="image/jpeg,image/png,image/webp" multiple /><span asp-validation-for="Photos" class="validation-message"></span><small>Up to 5 JPG, PNG, or WebP photos, 5 MB each.</small></div><div class="field-group"><label asp-for="ContactPreference">Contact preference</label><select asp-for="ContactPreference" asp-items="Html.GetEnumSelectList<ContactPreference>()"></select><span asp-validation-for="ContactPreference" class="validation-message"></span></div></div>
-<div class="privacy-note"><strong>Keep proof private.</strong> Do not publish card numbers, document details, or every unique feature. Use those details to confirm ownership privately.</div>
+<div class="privacy-note"><strong>Keep proof private.</strong> Do not publish card numbers, document details, or every unique feature. Use those details to confirm ownership privately.</div> *@

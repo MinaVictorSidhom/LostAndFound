@@ -1,8 +1,21 @@
 @using LostAndFound.Core.Domain.Posts
 @using LostAndFound.Ui.Models.Posts
 @model CreateItemPostViewModel
-@{ ViewData["Title"] = "Create a report"; }
+@{
+    ViewData["Title"] = "Create a report";
+}
 <link rel="stylesheet" href="~/css/StyleSheet.css" />
-<main class="post-page"><a class="brand" asp-controller="Posts" asp-action="Index"><span class="brand-mark">⌕</span>Lost &amp; Found</a>
-<section class="post-card"><p class="eyebrow">New report</p><h1>Create a lost or found post</h1><p class="post-intro">Share enough detail to help someone recognize the item, but keep ownership-proof details private.</p>
-<form asp-action="Create" method="post" enctype="multipart/form-data"><partial name="_PostForm" model="Model" /><button class="auth-submit" type="submit">Continue to review <span>→</span></button></form></section></main>
+
+<main class="post-page"><a class="brand" asp-controller="Posts" asp-action="Index">
+    <span class="brand-mark">⌕</span>
+    Lost &amp; Found</a>
+
+<section class="post-card">
+    <p class="eyebrow">New report</p>
+        <h1>Create a lost or found post</h1>
+
+    <p class="post-intro">Share enough detail to help someone recognize the item, but keep ownership-proof details private.</p>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data"><partial name="_PostForm" model="Model" /><button class="auth-submit" type="submit">Continue to review <span>→</span></button>
+
+</form></section></main>
