@@ -12,6 +12,9 @@
         </a>
         <nav>
             <a class="button-primary" asp-action="Create">Create report</a>
+            <form asp-controller="Account" asp-action="Logout" method="post" class="logout-form">
+                <button type="submit" class="link-button">Log out</button>
+            </form>
         </nav>
     </header>
 

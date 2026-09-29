@@ -11,3 +11,4 @@ C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\LostAndFound.Core
 C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\refint\LostAndFound.Core.dll
 C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\LostAndFound.Core.pdb
 C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\ref\LostAndFound.Core.dll
+C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\LostAndF.6BEB478A.Up2Date
