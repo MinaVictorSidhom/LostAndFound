@@ -1,17 +1,67 @@
+@model IEnumerable<ItemPost>
 @{
-    ViewData["Title"] = "Lost and Found";
+    ViewData["Title"] = "My reports";
 }
-
 <link rel="stylesheet" href="~/css/StyleSheet.css" />
 
-<main class="welcome-page">
-    <section class="welcome-card">
-        <div class="welcome-icon" aria-hidden="true">⌕</div>
-        <h1>Lost and Found</h1>
-        <p>A simple place to reconnect people with the belongings that matter to them.</p>
-        <nav class="welcome-actions" aria-label="Account actions">
-            <a class="button-primary" asp-controller="Account" asp-action="Login">Log in</a>
-            <a class="button-secondary" asp-controller="Account" asp-action="Register">Create an account</a>
+<main class="feed-page">
+    <header class="feed-header">
+        <a class="feed-brand" asp-action="Index">
+            <span class="brand-mark">⌕</span>Lost &amp; Found
+        </a>
+        <nav>
+            <a class="button-primary" asp-action="Create">Create report</a>
+            <form asp-controller="Account" asp-action="Logout" method="post" class="logout-form">
+                <button type="submit" class="link-button">Log out</button>
+            </form>
         </nav>
+    </header>
+
+    <section class="feed-hero compact">
+        <p class="eyebrow">Your account</p>
+        <h1>My reports</h1>
+        <p>Update a report when details change, or close it once the item is back where it belongs.</p>
+    </section>
+
+    @if (TempData["Success"] is string success)
+    {
+        <p class="success-message" role="status">@success</p>
+    }
+
+    <section class="post-list" aria-label="Your reports">
+        @if (!Model.Any())
+        {
+            <p class="empty-state">You have not created any reports yet.</p>
+        }
+        @foreach (var post in Model)
+        {
+            <article class="post-item">
+                <div class="post-item-header">
+                    <span class="post-type @post.Type.ToString().ToLowerInvariant()">@post.Type</span>
+                    <span class="status-tag">@post.Status</span>
+                </div>
+                <h2>@post.Title</h2>
+                <p class="post-meta">@post.Category · @post.Location · @post.ItemDate.ToString("dd MMM yyyy")</p>
+                <p>@post.Description</p>
+                @if (post.Images.Any())
+                {
+                    <img class="post-photo" src="@post.Images.First().Path" alt="Photo of @post.Title" />
+                }
+                <div class="post-actions">
+                    <a class="button-secondary" asp-action="Edit" asp-route-id="@post.Id">Edit</a>
+                    @if (post.Status == PostStatus.Active)
+                    {
+                        <form asp-action="Close" asp-route-id="@post.Id" method="post">
+                            <input type="hidden" name="resolved" value="true" />
+                            <button class="button-primary" type="submit">Mark resolved</button>
+                        </form>
+                        <form asp-action="Close" asp-route-id="@post.Id" method="post">
+                            <input type="hidden" name="resolved" value="false" />
+                            <button class="link-button" type="submit">Close report</button>
+                        </form>
+                    }
+                </div>
+            </article>
+        }
     </section>
 </main>
