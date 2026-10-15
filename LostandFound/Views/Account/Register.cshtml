@@ -35,6 +35,12 @@
             </div>
 
             <div class="field-group">
+                <label asp-for="PhoneNumber">Phone number</label>
+                <input asp-for="PhoneNumber" type="tel" autocomplete="tel" placeholder="Enter your phone number" />
+                <span asp-validation-for="PhoneNumber" class="validation-message"></span>
+            </div>
+
+            <div class="field-group">
                 <label asp-for="Password">Password</label>
                 <input asp-for="Password" type="password" autocomplete="new-password" placeholder="Create a password" />
                 <span asp-validation-for="Password" class="validation-message"></span>

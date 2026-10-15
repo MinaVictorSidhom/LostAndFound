@@ -37,6 +37,7 @@ namespace LostAndFound.Ui.Controllers
             {
                 UserName = model.Email,
                 Email = model.Email,
+                PhoneNumber = model.PhoneNumber,
                 PersonName = model.PersonName
             };
 

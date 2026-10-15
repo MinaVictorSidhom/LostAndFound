@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\aspnetcore\\LostAndFound\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|c:\\aspnetcore\\lostandfound\\lostandfound\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|solutionrelative:lostandfound\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|c:\\aspnetcore\\lostandfound\\lostandfound\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|solutionrelative:lostandfound\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|c:\\aspnetcore\\lostandfound\\lostandfound\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|solutionrelative:lostandfound\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{89EEE026-7D63-98C1-D4E1-20B940D1587F}|LostAndFound.Core\\LostAndFound.Core.csproj|c:\\aspnetcore\\lostandfound\\lostandfound.core\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89EEE026-7D63-98C1-D4E1-20B940D1587F}|LostAndFound.Core\\LostAndFound.Core.csproj|solutionrelative:lostandfound.core\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|c:\\aspnetcore\\lostandfound\\lostandfound\\views\\posts\\myposts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|solutionrelative:lostandfound\\views\\posts\\myposts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{89EEE026-7D63-98C1-D4E1-20B940D1587F}|LostAndFound.Core\\LostAndFound.Core.csproj|c:\\aspnetcore\\lostandfound\\lostandfound.core\\domain\\identityentities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89EEE026-7D63-98C1-D4E1-20B940D1587F}|LostAndFound.Core\\LostAndFound.Core.csproj|solutionrelative:lostandfound.core\\domain\\identityentities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89EEE026-7D63-98C1-D4E1-20B940D1587F}|LostAndFound.Core\\LostAndFound.Core.csproj|c:\\aspnetcore\\lostandfound\\lostandfound.core\\domain\\posts\\itempost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89EEE026-7D63-98C1-D4E1-20B940D1587F}|LostAndFound.Core\\LostAndFound.Core.csproj|solutionrelative:lostandfound.core\\domain\\posts\\itempost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|c:\\aspnetcore\\lostandfound\\lostandfound\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|solutionrelative:lostandfound\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|c:\\aspnetcore\\lostandfound\\lostandfound\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|solutionrelative:lostandfound\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|c:\\aspnetcore\\lostandfound\\lostandfound\\views\\posts\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -25,14 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|c:\\aspnetcore\\lostandfound\\lostandfound\\views\\posts\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|solutionrelative:lostandfound\\views\\posts\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|c:\\aspnetcore\\lostandfound\\lostandfound\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|solutionrelative:lostandfound\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|c:\\aspnetcore\\lostandfound\\lostandfound\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B67F08F9-5136-E79B-7BD5-E2AACF75FAD1}|LostandFound\\LostAndFound.Ui.csproj|solutionrelative:lostandfound\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,20 +58,56 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\aspnetcore\\LostAndFound\\LostAndFound.Core\\Domain\\IdentityEntities\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "LostAndFound.Core\\Domain\\IdentityEntities\\ApplicationUser.cs",
+              "ToolTip": "C:\\aspnetcore\\LostAndFound\\LostAndFound.Core\\Domain\\IdentityEntities\\ApplicationUser.cs",
+              "RelativeToolTip": "LostAndFound.Core\\Domain\\IdentityEntities\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIAwwAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T11:21:32.376Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "LostandFound\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "LostandFound\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-30T15:05:23.556Z",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "LostandFound\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "LostandFound\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAcwBUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T15:50:35.057Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "RegisterDTO.cs",
+              "DocumentMoniker": "C:\\aspnetcore\\LostAndFound\\LostAndFound.Core\\DTO\\RegisterDTO.cs",
+              "RelativeDocumentMoniker": "LostAndFound.Core\\DTO\\RegisterDTO.cs",
+              "ToolTip": "C:\\aspnetcore\\LostAndFound\\LostAndFound.Core\\DTO\\RegisterDTO.cs",
+              "RelativeToolTip": "LostAndFound.Core\\DTO\\RegisterDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-04T11:34:04.975Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ItemPost.cs",
+              "DocumentMoniker": "C:\\aspnetcore\\LostAndFound\\LostAndFound.Core\\Domain\\Posts\\ItemPost.cs",
+              "RelativeDocumentMoniker": "LostAndFound.Core\\Domain\\Posts\\ItemPost.cs",
+              "ToolTip": "C:\\aspnetcore\\LostAndFound\\LostAndFound.Core\\Domain\\Posts\\ItemPost.cs",
+              "RelativeToolTip": "LostAndFound.Core\\Domain\\Posts\\ItemPost.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-01T11:22:38.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "LostandFound\\Views\\_ViewImports.cshtml",
@@ -79,25 +115,23 @@
               "RelativeToolTip": "LostandFound\\Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-30T15:05:06.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-30T15:05:06.2Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PostsController.cs",
               "DocumentMoniker": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Controllers\\PostsController.cs",
               "RelativeDocumentMoniker": "LostandFound\\Controllers\\PostsController.cs",
               "ToolTip": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Controllers\\PostsController.cs",
               "RelativeToolTip": "LostandFound\\Controllers\\PostsController.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAiwHEAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAwwCAAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-30T14:51:49.286Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-30T14:51:49.286Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Views\\Posts\\Create.cshtml",
               "RelativeDocumentMoniker": "LostandFound\\Views\\Posts\\Create.cshtml",
@@ -105,12 +139,11 @@
               "RelativeToolTip": "LostandFound\\Views\\Posts\\Create.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-29T16:05:45.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-29T16:05:45.995Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Views\\Posts\\Edit.cshtml",
               "RelativeDocumentMoniker": "LostandFound\\Views\\Posts\\Edit.cshtml",
@@ -118,46 +151,7 @@
               "RelativeToolTip": "LostandFound\\Views\\Posts\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-29T16:05:45.073Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "LostandFound\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "LostandFound\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-29T15:50:35.057Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MyPosts.cshtml",
-              "DocumentMoniker": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Views\\Posts\\MyPosts.cshtml",
-              "RelativeDocumentMoniker": "LostandFound\\Views\\Posts\\MyPosts.cshtml",
-              "ToolTip": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Views\\Posts\\MyPosts.cshtml",
-              "RelativeToolTip": "LostandFound\\Views\\Posts\\MyPosts.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-27T13:52:28.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Program.cs",
-              "RelativeDocumentMoniker": "LostandFound\\Program.cs",
-              "ToolTip": "C:\\aspnetcore\\LostAndFound\\LostandFound\\Program.cs",
-              "RelativeToolTip": "LostandFound\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-07T15:22:43.083Z"
+              "WhenOpened": "2026-09-29T16:05:45.073Z"
             }
           ]
         },
