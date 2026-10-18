@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Lost and Found";
 }
-<link rel="stylesheet" href="~/css/StyleSheet.css" />
+<link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
 
 <main class="feed-page">
     <header class="feed-header">
@@ -13,11 +13,15 @@
         <nav>
             @if (User.Identity?.IsAuthenticated == true)
             {
+                <span class="welcome-name">Hi, @((ViewBag.CurrentUserName as string) ?? User.Identity?.Name)</span>
+                <partial name="_ThemeToggle" />
+                <a class="button-secondary" asp-action="Inbox">Messages</a>
                 <a class="button-secondary" asp-action="MyPosts">My posts</a>
                 <a class="button-primary" asp-action="Create">Create report</a>
             }
             else
             {
+                <partial name="_ThemeToggle" />
                 <a class="button-secondary" asp-controller="Account" asp-action="Login">Log in</a>
                 <a class="button-primary" asp-controller="Account" asp-action="Register">Create an account</a>
             }
@@ -25,12 +29,29 @@
     </header>
 
     <section class="feed-hero">
-        <p class="eyebrow">Community reports</p>
-        <h1>Help belongings find their way home.</h1>
-        <p>Browse active lost and found reports. Owners and finders can connect safely through the selected contact preference.</p>
+        <div>
+            <p class="eyebrow">Your community lost &amp; found</p>
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <h1>Good afternoon, @((ViewBag.CurrentUserName as string) ?? User.Identity?.Name).</h1>
+            }
+            else
+            {
+                <h1>Help belongings find their way home.</h1>
+            }
+            <p>A small detail can help someone find their way back to what matters.</p>
+        </div>
+        @if (User.Identity?.IsAuthenticated == true)
+        {
+            <a class="button-primary" asp-action="Create"><span aria-hidden="true">＋</span> Create a report</a>
+        }
     </section>
 
-    <section class="post-list" aria-label="Active reports">
+    <section aria-label="Active reports">
+        <div class="feed-section-heading">
+            <div><h2>Recent reports</h2><p>Browse what people have lost or found nearby.</p></div>
+        </div>
+        <div class="post-list">
         @if (!Model.Any())
         {
             <p class="empty-state">No active reports yet. Be the first to post one.</p>
@@ -38,19 +59,43 @@
         @foreach (var post in Model)
         {
             <article class="post-item">
-                <div class="post-item-header">
-                    <span class="post-type @post.Type.ToString().ToLowerInvariant()">@post.Type</span>
-                    <time datetime="@post.ItemDate.ToString("yyyy-MM-dd")">@post.ItemDate.ToString("dd MMM yyyy")</time>
+                <div class="post-card-row">
+                    @if (post.Images.Any())
+                    {
+                        <img class="post-photo" src="@post.Images.First().Path" alt="Photo of @post.Title" />
+                    }
+                    else
+                    {
+                        <div class="post-photo-placeholder" aria-hidden="true">⌕</div>
+                    }
+                    <div class="post-item-body">
+                        <div class="post-item-header">
+                            <span class="post-type @post.Type.ToString().ToLowerInvariant()">@post.Type item</span>
+                            <time datetime="@post.ItemDate.ToString("yyyy-MM-dd")">@post.ItemDate.ToString("dd MMM yyyy")</time>
+                        </div>
+                        <h2>@post.Title</h2>
+                        <p class="post-meta">@post.Category <span>·</span> @post.Location</p>
+                        <p>@post.Description</p>
+                        <p class="post-byline">Posted by @(string.IsNullOrWhiteSpace(post.User.PersonName) ? "Community member" : post.User.PersonName)</p>
+                        @if (User.Identity?.IsAuthenticated != true || post.UserId.ToString() != User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value)
+                        {
+                            <div class="post-contact-row">
+                                @if (post.ContactPreference == ContactPreference.ShowPhone && !string.IsNullOrWhiteSpace(post.User.PhoneNumber))
+                                {
+                                    <span class="contact-note">Phone: <a href="tel:@post.User.PhoneNumber">@post.User.PhoneNumber</a></span>
+                                    <a class="button-primary find-it-button" href="tel:@post.User.PhoneNumber">I find it <span aria-hidden="true">→</span></a>
+                                }
+                                else
+                                {
+                                    <span class="contact-note">Contact the poster privately</span>
+                                    <a class="button-primary find-it-button" asp-action="Contact" asp-route-id="@post.Id">I find it <span aria-hidden="true">→</span></a>
+                                }
+                            </div>
+                        }
+                    </div>
                 </div>
-                <h2>@post.Title</h2>
-                <p class="post-meta">@post.Category · @post.Location</p>
-                <p>@post.Description</p>
-                @if (post.Images.Any())
-                {
-                    <img class="post-photo" src="@post.Images.First().Path" alt="Photo of @post.Title" />
-                }
-                <p class="contact-note">Contact: @post.ContactPreference.ToString().Replace("InAppMessagesOnly", "In-app messages only").Replace("Show", "Show ")</p>
             </article>
         }
+        </div>
     </section>
 </main>

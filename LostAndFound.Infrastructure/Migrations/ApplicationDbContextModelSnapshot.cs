@@ -97,6 +97,23 @@ namespace LostAndFound.Infrastructure.Migrations
                     b.ToTable("ItemPostImages", (string)null);
                 });
 
+            modelBuilder.Entity("LostAndFound.Core.Domain.Posts.ItemPostMessage", b =>
+                {
+                    b.Property<Guid>("Id").ValueGeneratedOnAdd().HasColumnType("uniqueidentifier");
+                    b.Property<string>("Body").IsRequired().HasMaxLength(2000).HasColumnType("nvarchar(2000)");
+                    b.Property<Guid>("ConversationId").HasColumnType("uniqueidentifier");
+                    b.Property<Guid>("ItemPostId").HasColumnType("uniqueidentifier");
+                    b.Property<Guid>("RecipientUserId").HasColumnType("uniqueidentifier");
+                    b.Property<Guid>("SenderUserId").HasColumnType("uniqueidentifier");
+                    b.Property<DateTime>("SentAtUtc").HasColumnType("datetime2");
+                    b.HasKey("Id");
+                    b.HasIndex("ConversationId");
+                    b.HasIndex("ItemPostId");
+                    b.HasIndex("RecipientUserId");
+                    b.HasIndex("SenderUserId");
+                    b.ToTable("ItemPostMessages", (string)null);
+                });
+
             modelBuilder.Entity("LostAndFound.Core.Domain.IdentityEntities.ApplicationRole", b =>
                 {
                     b.Property<Guid>("Id")
@@ -213,6 +230,14 @@ namespace LostAndFound.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("ItemPost");
+                });
+
+            modelBuilder.Entity("LostAndFound.Core.Domain.Posts.ItemPostMessage", b =>
+                {
+                    b.HasOne("LostAndFound.Core.Domain.Posts.ItemPost", "ItemPost").WithMany().HasForeignKey("ItemPostId").OnDelete(DeleteBehavior.Cascade).IsRequired();
+                    b.HasOne("LostAndFound.Core.Domain.IdentityEntities.ApplicationUser", null).WithMany().HasForeignKey("RecipientUserId").OnDelete(DeleteBehavior.Restrict).IsRequired();
+                    b.HasOne("LostAndFound.Core.Domain.IdentityEntities.ApplicationUser", null).WithMany().HasForeignKey("SenderUserId").OnDelete(DeleteBehavior.Restrict).IsRequired();
                     b.Navigation("ItemPost");
                 });
 

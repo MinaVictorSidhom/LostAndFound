@@ -3,11 +3,12 @@
 @{
     ViewData["Title"] = "Create a report";
 }
-<link rel="stylesheet" href="~/css/StyleSheet.css" />
+<link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
 
 <main class="post-page"><a class="brand" asp-controller="Posts" asp-action="Index">
     <span class="brand-mark">⌕</span>
     Lost &amp; Found</a>
+<partial name="_ThemeToggle" />
 
 <section class="post-card">
     <p class="eyebrow">New report</p>

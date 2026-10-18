@@ -4,13 +4,14 @@
     ViewData["Title"] = "Create your account";
 }
 
-<link rel="stylesheet" href="~/css/StyleSheet.css" />
+<link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
 
 <main class="auth-page">
     <a class="brand" asp-controller="Home" asp-action="Index" aria-label="Lost and Found home">
         <span class="brand-mark" aria-hidden="true">⌕</span>
         <span>Lost &amp; Found</span>
     </a>
+    <partial name="_ThemeToggle" />
 
     <section class="auth-card auth-card-register" aria-labelledby="register-heading">
         <div class="auth-heading">

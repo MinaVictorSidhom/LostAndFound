@@ -16,3 +16,7 @@ C:\aspnetcore\LostandFound\LostAndFound.Infrastructure\obj\Debug\net10.0\refint\
 C:\aspnetcore\LostandFound\LostAndFound.Infrastructure\obj\Debug\net10.0\LostAndFound.Infrastructure.pdb
 C:\aspnetcore\LostandFound\LostAndFound.Infrastructure\obj\Debug\net10.0\LostAndFound.Infrastructure.genruntimeconfig.cache
 C:\aspnetcore\LostandFound\LostAndFound.Infrastructure\obj\Debug\net10.0\ref\LostAndFound.Infrastructure.dll
+C:\Users\MinaVictor\.codex\visualizations\2026\10\18\01a14f43-31b8-7f83-b669-97e3bdb474c6\build\LostAndFound.Infrastructure.deps.json
+C:\Users\MinaVictor\.codex\visualizations\2026\10\18\01a14f43-31b8-7f83-b669-97e3bdb474c6\build\LostAndFound.Infrastructure.runtimeconfig.json
+C:\Users\MinaVictor\.codex\visualizations\2026\10\18\01a14f43-31b8-7f83-b669-97e3bdb474c6\build\LostAndFound.Infrastructure.dll
+C:\Users\MinaVictor\.codex\visualizations\2026\10\18\01a14f43-31b8-7f83-b669-97e3bdb474c6\build\LostAndFound.Infrastructure.pdb

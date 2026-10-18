@@ -4,7 +4,8 @@ namespace LostAndFound.Core.Domain.Posts;
 
 public enum PostType { Lost, Found }
 public enum PostStatus { Active, Resolved, Closed }
-public enum ContactPreference { InAppMessagesOnly, ShowEmail, ShowPhone }
+// Keep ShowPhone at its existing stored enum value; legacy email value 1 falls back to messaging.
+public enum ContactPreference { InAppMessagesOnly = 0, ShowPhone = 2 }
 
 public class ItemPost
 {
@@ -30,4 +31,16 @@ public class ItemPostImage
     public Guid ItemPostId { get; set; }
     public ItemPost ItemPost { get; set; } = null!;
     public string Path { get; set; } = string.Empty;
+}
+
+public class ItemPostMessage
+{
+    public Guid Id { get; set; } = Guid.NewGuid();
+    public Guid ConversationId { get; set; }
+    public Guid ItemPostId { get; set; }
+    public ItemPost ItemPost { get; set; } = null!;
+    public Guid SenderUserId { get; set; }
+    public Guid RecipientUserId { get; set; }
+    public string Body { get; set; } = string.Empty;
+    public DateTime SentAtUtc { get; set; } = DateTime.UtcNow;
 }

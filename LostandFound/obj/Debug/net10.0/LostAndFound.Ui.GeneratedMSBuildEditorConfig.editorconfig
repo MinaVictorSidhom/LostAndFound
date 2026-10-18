@@ -43,12 +43,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/aspnetcore/LostandFound/LostandFound/Views/Posts/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcQ29udGFjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/aspnetcore/LostandFound/LostandFound/Views/Posts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/aspnetcore/LostandFound/LostandFound/Views/Posts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/aspnetcore/LostandFound/LostandFound/Views/Posts/Inbox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcSW5ib3guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/aspnetcore/LostandFound/LostandFound/Views/Posts/Index.cshtml]
@@ -61,6 +69,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/aspnetcore/LostandFound/LostandFound/Views/Posts/_PostForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcX1Bvc3RGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/aspnetcore/LostandFound/LostandFound/Views/Shared/_ThemeToggle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9UaGVtZVRvZ2dsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/aspnetcore/LostandFound/LostandFound/Views/_ViewImports.cshtml]

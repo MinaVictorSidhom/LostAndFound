@@ -1,0 +1,34 @@
+@model LostAndFound.Ui.Models.Posts.ContactItemViewModel
+@{
+    ViewData["Title"] = "Contact about item";
+}
+<link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
+
+<main class="feed-page">
+    <header class="feed-header">
+        <a class="feed-brand" asp-action="Index"><span class="brand-mark">⌕</span>Lost &amp; Found</a>
+        <nav><partial name="_ThemeToggle" /><a class="button-secondary" asp-action="Inbox">Messages</a></nav>
+    </header>
+    <section class="feed-hero compact">
+        <div><p class="eyebrow">In-app messages</p><h1>@Model.ItemTitle</h1><p>Send a private message to the person who posted this report.</p></div>
+    </section>
+    <section class="post-item message-thread">
+        @foreach (var message in Model.Messages)
+        {
+            <article class="message-bubble @(message.IsOwnMessage ? "own-message" : "")">
+                <strong>@message.SenderName</strong>
+                <p>@message.Body</p>
+                <time>@message.SentAtUtc.ToLocalTime().ToString("g")</time>
+            </article>
+        }
+        <form asp-action="Contact" method="post" class="message-form">
+            <input asp-for="PostId" type="hidden" />
+            <input asp-for="ConversationId" type="hidden" />
+            <div asp-validation-summary="ModelOnly" class="validation-message" role="alert"></div>
+            <label asp-for="Message">Message</label>
+            <textarea asp-for="Message" placeholder="Share how you can help. Keep proof of ownership private." required></textarea>
+            <span asp-validation-for="Message" class="validation-message"></span>
+            <button class="button-primary find-it-button" type="submit">Send message</button>
+        </form>
+    </section>
+</main>

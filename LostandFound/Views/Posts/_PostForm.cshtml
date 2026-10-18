@@ -59,7 +59,10 @@
     </div>
     <div class="field-group">
         <label asp-for="ContactPreference">Contact preference</label>
-        <select asp-for="ContactPreference" asp-items="Html.GetEnumSelectList<ContactPreference>()"></select>
+        <select asp-for="ContactPreference">
+            <option value="0">In-app messaging only</option>
+            <option value="2">Phone number</option>
+        </select>
         <span asp-validation-for="ContactPreference" class="validation-message"></span>
     </div>
 </div>

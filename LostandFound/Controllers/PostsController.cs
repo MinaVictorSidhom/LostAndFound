@@ -27,7 +27,13 @@ public class PostsController : Controller
 
     public async Task<IActionResult> Index()
     {
-        var posts = await _db.ItemPosts.Include(post => post.Images)
+        if (User.Identity?.IsAuthenticated == true)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+            ViewBag.CurrentUserName = currentUser?.PersonName;
+        }
+
+        var posts = await _db.ItemPosts.Include(post => post.Images).Include(post => post.User)
             .Where(post => post.Status == PostStatus.Active)
             .OrderByDescending(post => post.CreatedAtUtc).ToListAsync();
         return View(posts);
@@ -70,9 +76,92 @@ public class PostsController : Controller
     {
         var user = await _userManager.GetUserAsync(User);
         if (user is null) return Challenge();
+        ViewBag.CurrentUserName = user.PersonName;
         var posts = await _db.ItemPosts.Include(post => post.Images).Where(post => post.UserId == user.Id)
             .OrderByDescending(post => post.CreatedAtUtc).ToListAsync();
         return View(posts);
+    }
+
+    [Authorize]
+    public async Task<IActionResult> Inbox()
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user is null) return Challenge();
+        var allMessages = await _db.ItemPostMessages.Include(message => message.ItemPost)
+            .Where(message => message.SenderUserId == user.Id || message.RecipientUserId == user.Id)
+            .OrderByDescending(message => message.SentAtUtc).ToListAsync();
+        var conversations = allMessages.GroupBy(message => message.ConversationId)
+            .Select(group => group.First())
+            .Select(message => new InboxConversationViewModel
+            {
+                PostId = message.ItemPostId,
+                ConversationId = message.ConversationId,
+                ItemTitle = message.ItemPost.Title,
+                LatestMessage = message.Body,
+                UpdatedAtUtc = message.SentAtUtc
+            }).ToList();
+        return View(conversations);
+    }
+
+    [Authorize]
+    public async Task<IActionResult> Contact(Guid id, Guid? conversationId)
+    {
+        var user = await _userManager.GetUserAsync(User);
+        var post = await _db.ItemPosts.SingleOrDefaultAsync(item => item.Id == id && item.Status == PostStatus.Active);
+        if (user is null) return Challenge();
+        if (post is null) return NotFound();
+        if (post.UserId == user.Id && !conversationId.HasValue) return Forbid();
+
+        var model = new ContactItemViewModel { PostId = post.Id, ItemTitle = post.Title, ConversationId = conversationId };
+        if (conversationId.HasValue)
+        {
+            var messages = await _db.ItemPostMessages.Where(message => message.ConversationId == conversationId && message.ItemPostId == post.Id)
+                .OrderBy(message => message.SentAtUtc).ToListAsync();
+            if (messages.Count == 0 || messages.All(message => message.SenderUserId != user.Id && message.RecipientUserId != user.Id)) return NotFound();
+            model.Messages = await ToMessageLines(messages, user.Id);
+        }
+        return View(model);
+    }
+
+    [Authorize, HttpPost, ValidateAntiForgeryToken]
+    public async Task<IActionResult> Contact(ContactItemViewModel model)
+    {
+        var user = await _userManager.GetUserAsync(User);
+        var post = await _db.ItemPosts.SingleOrDefaultAsync(item => item.Id == model.PostId && item.Status == PostStatus.Active);
+        if (user is null) return Challenge();
+        if (post is null) return NotFound();
+        if (post.UserId == user.Id && !model.ConversationId.HasValue) return Forbid();
+        model.ItemTitle = post.Title;
+
+        Guid recipientId = post.UserId;
+        var conversationId = model.ConversationId ?? Guid.NewGuid();
+        if (model.ConversationId.HasValue)
+        {
+            var threadMessages = await _db.ItemPostMessages.Where(message => message.ConversationId == conversationId && message.ItemPostId == post.Id).ToListAsync();
+            if (threadMessages.Count == 0 || threadMessages.All(message => message.SenderUserId != user.Id && message.RecipientUserId != user.Id)) return NotFound();
+            recipientId = threadMessages[0].SenderUserId == user.Id ? threadMessages[0].RecipientUserId : threadMessages[0].SenderUserId;
+        }
+
+        if (!ModelState.IsValid)
+        {
+            if (model.ConversationId.HasValue)
+            {
+                var messages = await _db.ItemPostMessages.Where(message => message.ConversationId == conversationId).OrderBy(message => message.SentAtUtc).ToListAsync();
+                model.Messages = await ToMessageLines(messages, user.Id);
+            }
+            return View(model);
+        }
+
+        _db.ItemPostMessages.Add(new ItemPostMessage
+        {
+            ConversationId = conversationId,
+            ItemPostId = post.Id,
+            SenderUserId = user.Id,
+            RecipientUserId = recipientId,
+            Body = model.Message.Trim()
+        });
+        await _db.SaveChangesAsync();
+        return RedirectToAction(nameof(Contact), new { id = post.Id, conversationId });
     }
 
     [Authorize]
@@ -137,6 +226,19 @@ public class PostsController : Controller
     {
         var user = await _userManager.GetUserAsync(User);
         return user is null ? null : await _db.ItemPosts.Include(post => post.Images).SingleOrDefaultAsync(post => post.Id == id && post.UserId == user.Id);
+    }
+
+    private async Task<List<MessageLineViewModel>> ToMessageLines(List<ItemPostMessage> messages, Guid currentUserId)
+    {
+        var userIds = messages.SelectMany(message => new[] { message.SenderUserId, message.RecipientUserId }).Distinct();
+        var users = await _db.Users.Where(user => userIds.Contains(user.Id)).ToDictionaryAsync(user => user.Id, user => user.PersonName ?? "User");
+        return messages.Select(message => new MessageLineViewModel
+        {
+            SenderName = users.GetValueOrDefault(message.SenderUserId, "User"),
+            Body = message.Body,
+            SentAtUtc = message.SentAtUtc,
+            IsOwnMessage = message.SenderUserId == currentUserId
+        }).ToList();
     }
 
     private async Task SavePhotos(ItemPost post, IEnumerable<IFormFile> photos)

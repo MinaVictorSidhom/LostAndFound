@@ -3,13 +3,14 @@
 @{ 
     ViewData["Title"] = "Edit report"; 
 }
-<link rel="stylesheet" href="~/css/StyleSheet.css" />
+<link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
 
 <main class="post-page">
     <a class="brand" asp-controller="Posts" asp-action="MyPosts">
 
         <span class="brand-mark">⌕</span>Lost &amp; Found
     </a>
+    <partial name="_ThemeToggle" />
 
 <section class="post-card"><p class="eyebrow">Your report</p><h1>Edit report</h1><form asp-action="Edit" asp-route-id="@Context.Request.RouteValues["id"]" method="post" enctype="multipart/form-data"><partial name="_PostForm" model="Model" /><button class="auth-submit" type="submit">Save changes</button></form>
 </section>

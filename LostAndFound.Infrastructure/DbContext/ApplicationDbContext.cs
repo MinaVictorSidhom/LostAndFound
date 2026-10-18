@@ -14,6 +14,7 @@ namespace LostAndFound.Infrastructure
 
         public DbSet<ItemPost> ItemPosts => Set<ItemPost>();
         public DbSet<ItemPostImage> ItemPostImages => Set<ItemPostImage>();
+        public DbSet<ItemPostMessage> ItemPostMessages => Set<ItemPostMessage>();
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -32,6 +33,15 @@ namespace LostAndFound.Infrastructure
             {
                 entity.Property(image => image.Path).HasMaxLength(300).IsRequired();
                 entity.HasOne(image => image.ItemPost).WithMany(post => post.Images).HasForeignKey(image => image.ItemPostId).OnDelete(DeleteBehavior.Cascade);
+            });
+
+            builder.Entity<ItemPostMessage>(entity =>
+            {
+                entity.Property(message => message.Body).HasMaxLength(2000).IsRequired();
+                entity.HasIndex(message => message.ConversationId);
+                entity.HasOne(message => message.ItemPost).WithMany().HasForeignKey(message => message.ItemPostId).OnDelete(DeleteBehavior.Cascade);
+                entity.HasOne<ApplicationUser>().WithMany().HasForeignKey(message => message.SenderUserId).OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne<ApplicationUser>().WithMany().HasForeignKey(message => message.RecipientUserId).OnDelete(DeleteBehavior.Restrict);
             });
         }
     }
