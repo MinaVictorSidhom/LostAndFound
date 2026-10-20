@@ -1,0 +1,91 @@
+@using LostAndFound.Ui.Models
+@model ProfileViewModel
+@{
+    ViewData["Title"] = "My profile";
+    var cities = ViewBag.EgyptianCities as string[] ?? Array.Empty<string>();
+}
+<link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true" />
+
+<main class="feed-page">
+    <header class="feed-header">
+        <a class="feed-brand" asp-controller="Posts" asp-action="Index">
+            <span class="brand-mark" aria-hidden="true">⌕</span>Lost &amp; Found
+        </a>
+        <nav>
+            <partial name="_ThemeToggle" />
+            <a class="button-secondary" asp-controller="Posts" asp-action="Index">Browse reports</a>
+            <form asp-action="Logout" method="post" class="logout-form">
+                <button type="submit" class="link-button">Log out</button>
+            </form>
+        </nav>
+    </header>
+
+    <section class="feed-hero compact profile-hero">
+        <div>
+            <p class="eyebrow">Account settings</p>
+            <h1>My profile</h1>
+            <p>Keep your contact details visible to you and choose the city you call home.</p>
+        </div>
+        <div class="profile-avatar" aria-hidden="true">@(string.IsNullOrWhiteSpace(Model.PersonName) ? "?" : Model.PersonName.Trim()[0].ToString().ToUpperInvariant())</div>
+    </section>
+
+    @if (TempData["Success"] is string success)
+    {
+        <p class="success-message" role="status">@success</p>
+    }
+
+    <section class="profile-card" aria-labelledby="profile-details-heading">
+        <div class="profile-card-heading">
+            <div>
+                <h2 id="profile-details-heading">Personal details</h2>
+                <p>Your name and city can be updated at any time.</p>
+            </div>
+            <span class="profile-secure"><span aria-hidden="true">✓</span> Private account details</span>
+        </div>
+
+        <form asp-action="Profile" method="post" class="profile-form">
+            <div asp-validation-summary="ModelOnly" class="validation-message" role="alert"></div>
+
+            <div class="field-group">
+                <label asp-for="PersonName"></label>
+                <input asp-for="PersonName" autocomplete="name" placeholder="Your full name" />
+                <span asp-validation-for="PersonName" class="validation-message"></span>
+            </div>
+
+            <div class="field-group">
+                <label asp-for="City"></label>
+                <select asp-for="City">
+                    <option value="">Choose your city</option>
+                    @foreach (var city in cities)
+                    {
+                        <option value="@city">@city</option>
+                    }
+                </select>
+                <span asp-validation-for="City" class="validation-message"></span>
+                <small>Choose from Egypt’s governorates.</small>
+            </div>
+
+            <div class="field-group">
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber" type="tel" autocomplete="tel" required placeholder="Enter your phone number" />
+                <span asp-validation-for="PhoneNumber" class="validation-message"></span>
+            </div>
+
+            <div class="profile-readonly-grid profile-email-grid">
+                <div class="profile-readonly-item">
+                    <span class="profile-detail-icon" aria-hidden="true">✉</span>
+                    <div>
+                        <span class="profile-detail-label">Gmail / email address</span>
+                        <span class="profile-detail-value">@(string.IsNullOrWhiteSpace(Model.Email) ? "Not provided" : Model.Email)</span>
+                    </div>
+                    <span class="read-only-badge">Read only</span>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <a class="button-secondary" asp-controller="Posts" asp-action="Index">Cancel</a>
+                <button type="submit" class="button-primary">Save changes <span aria-hidden="true">→</span></button>
+            </div>
+        </form>
+    </section>
+</main>

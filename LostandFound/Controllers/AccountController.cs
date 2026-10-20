@@ -1,5 +1,6 @@
 using LostAndFound.Core.Domain.IdentityEntities;
 using LostAndFound.Core.DTO;
+using LostAndFound.Ui.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,6 +8,15 @@ namespace LostAndFound.Ui.Controllers
 {
     public class AccountController : Controller
     {
+        private static readonly string[] EgyptianCities =
+        [
+            "Alexandria", "Aswan", "Asyut", "Beheira", "Beni Suef", "Cairo", "Dakahlia",
+            "Damietta", "Fayoum", "Gharbia", "Giza", "Ismailia", "Kafr El Sheikh",
+            "Luxor", "Matruh", "Menofia", "Minya", "New Valley", "North Sinai",
+            "Port Said", "Qalyubia", "Qena", "Red Sea", "Sharqia", "Sohag",
+            "South Sinai", "Suez"
+        ];
+
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
 
@@ -16,6 +26,54 @@ namespace LostAndFound.Ui.Controllers
         {
             _signInManager = signInManager;
             _userManager = userManager;
+        }
+
+        [HttpGet]
+        [Microsoft.AspNetCore.Authorization.Authorize]
+        public async Task<IActionResult> Profile()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Challenge();
+
+            ViewBag.EgyptianCities = EgyptianCities;
+            return View(new ProfileViewModel
+            {
+                PersonName = user.PersonName ?? string.Empty,
+                City = user.City ?? string.Empty,
+                Email = user.Email ?? string.Empty,
+                PhoneNumber = user.PhoneNumber ?? string.Empty
+            });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Microsoft.AspNetCore.Authorization.Authorize]
+        public async Task<IActionResult> Profile(ProfileViewModel model)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Challenge();
+
+            ViewBag.EgyptianCities = EgyptianCities;
+            model.Email = user.Email ?? string.Empty;
+            model.PhoneNumber = user.PhoneNumber ?? string.Empty;
+
+            if (!EgyptianCities.Contains(model.City, StringComparer.Ordinal))
+                ModelState.AddModelError(nameof(model.City), "Choose a city in Egypt from the list.");
+
+            if (!ModelState.IsValid) return View(model);
+
+            user.PersonName = model.PersonName.Trim();
+            user.City = model.City;
+            user.PhoneNumber = model.PhoneNumber.Trim();
+            var result = await _userManager.UpdateAsync(user);
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors) ModelState.AddModelError(string.Empty, error.Description);
+                return View(model);
+            }
+
+            TempData["Success"] = "Your profile has been updated.";
+            return RedirectToAction(nameof(Profile));
         }
 
         [HttpGet]

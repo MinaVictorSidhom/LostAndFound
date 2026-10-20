@@ -8,5 +8,6 @@ namespace LostAndFound.Core.Domain.IdentityEntities
     public class ApplicationUser : IdentityUser<Guid>
     {
         public string? PersonName { get; set; }
+        public string? City { get; set; }
     }
 }

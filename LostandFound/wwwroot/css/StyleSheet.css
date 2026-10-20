@@ -332,6 +332,57 @@ html[data-theme="dark"] .link-button { color: #aabbb2; }
 .message-form { display: grid; gap: .55rem; margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #edf1ef; }
 .message-form .find-it-button { justify-self: start; min-height: 2.6rem; padding: .65rem 1rem; }
 
+.profile-hero { align-items: center; }
+.profile-avatar {
+    display: grid;
+    width: 4.25rem;
+    height: 4.25rem;
+    flex: none;
+    place-items: center;
+    border: 5px solid #e4f4ec;
+    border-radius: 50%;
+    color: #fff;
+    background: linear-gradient(145deg, #13a178, #087453);
+    box-shadow: 0 5px 16px rgba(11, 130, 98, .2);
+    font-size: 1.45rem;
+    font-weight: 800;
+}
+.profile-card {
+    width: min(100%, 820px);
+    margin: 0 auto;
+    padding: clamp(1.1rem, 3vw, 1.8rem);
+    border: 1px solid #e4eae8;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(27, 54, 45, .045);
+}
+.profile-card-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding-bottom: 1.2rem; border-bottom: 1px solid #edf1ef; }
+.profile-card-heading h2 { margin: 0; color: #20332c; font-size: 1.1rem; letter-spacing: -.035em; }
+.profile-card-heading p { margin: .3rem 0 0; color: #78877f; font-size: .8rem; }
+.profile-secure { display: inline-flex; align-items: center; gap: .4rem; color: #43816a; font-size: .72rem; font-weight: 700; white-space: nowrap; }
+.profile-secure span { display: grid; width: 1.15rem; height: 1.15rem; place-items: center; border-radius: 50%; color: #187450; background: #e8f7ee; }
+.profile-form { padding-top: 1.2rem; }
+.profile-form .field-group { max-width: 500px; }
+.profile-readonly-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; margin-top: .2rem; }
+.profile-email-grid { grid-template-columns: minmax(0, 1fr); }
+.profile-readonly-item { min-width: 0; display: flex; align-items: center; gap: .75rem; padding: .9rem; border: 1px solid #e7eeea; border-radius: .75rem; background: #f8fbf9; }
+.profile-readonly-item > div { min-width: 0; display: grid; gap: .22rem; }
+.profile-detail-icon { display: grid; width: 2.3rem; height: 2.3rem; flex: none; place-items: center; border-radius: .65rem; color: #16805f; background: #e9f6ef; font-size: 1rem; }
+.profile-detail-label { color: #75847c; font-size: .7rem; font-weight: 700; }
+.profile-detail-value { overflow: hidden; color: #253a31; font-size: .82rem; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.read-only-badge { margin-left: auto; padding: .25rem .45rem; border: 1px solid #e2e9e5; border-radius: 999px; color: #76857e; background: #fff; font-size: .62rem; font-weight: 700; white-space: nowrap; }
+.profile-actions { display: flex; justify-content: flex-end; gap: .6rem; margin-top: 1.35rem; padding-top: 1rem; border-top: 1px solid #edf1ef; }
+html[data-theme="dark"] .profile-card { color: #e4eee9; background: #1a2620; border-color: #2d3d34; box-shadow: 0 8px 24px rgba(0,0,0,.16); }
+html[data-theme="dark"] .profile-card-heading { border-color: #2d3d34; }
+html[data-theme="dark"] .profile-card-heading h2, html[data-theme="dark"] .profile-detail-value { color: #e4eee9; }
+html[data-theme="dark"] .profile-card-heading p, html[data-theme="dark"] .profile-detail-label { color: #a3b4ab; }
+html[data-theme="dark"] .profile-secure { color: #a8dfc2; }
+html[data-theme="dark"] .profile-secure span, html[data-theme="dark"] .profile-detail-icon { color: #a8efd0; background: #1e4032; }
+html[data-theme="dark"] .profile-readonly-item { background: #15211b; border-color: #2d3d34; }
+html[data-theme="dark"] .read-only-badge { color: #a3b4ab; background: #1d2a24; border-color: #34483e; }
+html[data-theme="dark"] .profile-actions { border-color: #2d3d34; }
+html[data-theme="dark"] .profile-avatar { border-color: #294437; }
+
 @media (max-width: 700px) {
     .feed-header { align-items: flex-start; flex-direction: column; padding: .85rem 0; }
     .feed-header nav { width: 100%; justify-content: flex-start; }
@@ -339,6 +390,8 @@ html[data-theme="dark"] .link-button { color: #aabbb2; }
     .feed-hero, .feed-hero.compact { align-items: flex-start; flex-direction: column; padding: 2.2rem 0 1.6rem; }
     .post-grid { grid-template-columns: 1fr; gap: 0; }
     .post-page > .theme-toggle { top: .9rem; right: 1rem; }
+    .profile-card-heading { flex-direction: column; }
+    .profile-readonly-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
     .feed-page { padding: 0 .85rem 2rem; }
