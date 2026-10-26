@@ -7,12 +7,14 @@
 <main class="feed-page">
     <header class="feed-header">
         <a class="feed-brand" asp-action="Index"><span class="brand-mark">⌕</span>Lost &amp; Found</a>
-        <nav><partial name="_ThemeToggle" /><a class="button-secondary" asp-action="Inbox">Messages</a></nav>
+        <nav><partial name="_ThemeToggle" /><a class="button-secondary messages-nav" data-messages-nav data-user-id="@User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value" asp-action="Inbox"><span>Messages</span><span class="message-notification" data-message-count hidden aria-hidden="true"></span></a></nav>
     </header>
     <section class="feed-hero compact">
         <div><p class="eyebrow">In-app messages</p><h1>@Model.ItemTitle</h1><p>Send a private message to the person who posted this report.</p></div>
     </section>
-    <section class="post-item message-thread">
+    <section class="post-item message-thread" id="message-thread" data-post-id="@Model.PostId" data-conversation-id="@Model.ConversationId" data-user-id="@User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value">
+        <p class="live-status" id="live-status" role="status">Connecting to live chat…</p>
+        <div class="message-list" id="message-list" aria-live="polite" aria-relevant="additions">
         @foreach (var message in Model.Messages)
         {
             <article class="message-bubble @(message.IsOwnMessage ? "own-message" : "")">
@@ -21,6 +23,7 @@
                 <time>@message.SentAtUtc.ToLocalTime().ToString("g")</time>
             </article>
         }
+        </div>
         <form asp-action="Contact" method="post" class="message-form">
             <input asp-for="PostId" type="hidden" />
             <input asp-for="ConversationId" type="hidden" />
@@ -32,3 +35,5 @@
         </form>
     </section>
 </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="~/js/messages.js" asp-append-version="true"></script>

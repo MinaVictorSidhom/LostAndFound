@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LostAndFound.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae416062c3f85f1c0a6da0ed46701d76dd0e4e81")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d728d750dfb4b38d36af43bdd7e4d6359bdc1d9a")]
 [assembly: System.Reflection.AssemblyProductAttribute("LostAndFound.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LostAndFound.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

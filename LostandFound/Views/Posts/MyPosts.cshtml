@@ -11,7 +11,7 @@
         </a>
         <nav>
             <partial name="_ThemeToggle" />
-            <a class="button-secondary" asp-action="Inbox">Messages</a>
+            <a class="button-secondary messages-nav" data-messages-nav data-user-id="@User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value" asp-action="Inbox"><span>Messages</span><span class="message-notification" data-message-count hidden aria-hidden="true"></span></a>
             <a class="button-secondary" asp-controller="Account" asp-action="Profile">Profile</a>
             <a class="button-primary" asp-action="Create">Create report</a>
             <form asp-controller="Account" asp-action="Logout" method="post" class="logout-form">
@@ -70,3 +70,5 @@
       </div>
     </section>
 </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="~/js/messages.js" asp-append-version="true"></script>

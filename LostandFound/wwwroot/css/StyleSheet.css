@@ -320,10 +320,24 @@ html[data-theme="dark"] .message-bubble.own-message { background: #1c4032; }
 html[data-theme="dark"] .message-bubble strong { color: #b5e6d0; }
 html[data-theme="dark"] .message-bubble p { color: #d7e6de; }
 html[data-theme="dark"] .message-bubble time { color: #9badA3; }
+html[data-theme="dark"] .conversation-card.has-unread { border-color: #784643; box-shadow: 0 4px 16px rgba(0,0,0,.16); }
+html[data-theme="dark"] .conversation-card.has-unread [data-latest-message] { color: #e4eee9; }
 html[data-theme="dark"] .success-message { color: #b5e6d0; background: #1c4032; border-color: #315a47; }
 html[data-theme="dark"] .link-button { color: #aabbb2; }
 
 .message-thread { max-width: 800px; margin: 0 auto; padding: 1.2rem; }
+.message-notification { display: inline-grid; min-width: 1.15rem; height: 1.15rem; margin-left: .35rem; padding: 0 .25rem; place-items: center; border-radius: 999px; color: #fff; background: #d34d48; font-size: .65rem; font-weight: 800; line-height: 1; }
+.message-notification[hidden] { display: none; }
+.conversation-card h2 { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+.conversation-card.has-unread { border-color: #e7b4ae; box-shadow: 0 4px 16px rgba(211, 77, 72, .1); }
+.conversation-card.has-unread [data-item-title] { font-weight: 800; }
+.conversation-card.has-unread [data-latest-message] { color: #354d43; font-weight: 700; }
+.conversation-unread { display: inline-grid; min-width: 1.2rem; height: 1.2rem; flex: none; padding: 0 .3rem; place-items: center; border-radius: 999px; color: #fff; background: #d34d48; font-size: .66rem; font-weight: 800; line-height: 1; letter-spacing: 0; }
+.conversation-unread[hidden] { display: none; }
+.message-list { max-height: min(62vh, 680px); overflow-y: auto; padding: .2rem .25rem; scroll-behavior: smooth; }
+.live-status { min-height: 1.2rem; margin: 0 0 .7rem; color: #728178; font-size: .75rem; }
+.message-form textarea { min-height: 6rem; resize: vertical; }
+.message-form button:disabled { cursor: wait; opacity: .65; }
 .message-bubble { width: fit-content; max-width: min(90%, 620px); margin: .7rem 0; padding: .85rem 1rem; border-radius: .85rem; background: #eff4f1; }
 .message-bubble.own-message { margin-left: auto; background: #e3f4ec; }
 .message-bubble strong { color: #315b4d; font-size: .78rem; }

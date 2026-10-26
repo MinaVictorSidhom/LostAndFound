@@ -18,6 +18,7 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
 
 builder.Services.AddAuthorization();
 builder.Services.AddControllersWithViews();
+builder.Services.AddSignalR();
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
@@ -42,5 +43,6 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapHub<LostAndFound.Ui.Hubs.MessagesHub>("/hubs/messages");
 
 app.Run();

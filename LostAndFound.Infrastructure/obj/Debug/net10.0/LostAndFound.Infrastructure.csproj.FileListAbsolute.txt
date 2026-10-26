@@ -20,3 +20,7 @@ C:\Users\MinaVictor\.codex\visualizations\2026\10\18\01a14f43-31b8-7f83-b669-97e
 C:\Users\MinaVictor\.codex\visualizations\2026\10\18\01a14f43-31b8-7f83-b669-97e3bdb474c6\build\LostAndFound.Infrastructure.runtimeconfig.json
 C:\Users\MinaVictor\.codex\visualizations\2026\10\18\01a14f43-31b8-7f83-b669-97e3bdb474c6\build\LostAndFound.Infrastructure.dll
 C:\Users\MinaVictor\.codex\visualizations\2026\10\18\01a14f43-31b8-7f83-b669-97e3bdb474c6\build\LostAndFound.Infrastructure.pdb
+C:\Users\MinaVictor\.codex\visualizations\2026\10\26\01a1790d-d22f-7a91-a3df-60c56007ab55\LostAndFoundBuildCheck\Debug\net10.0\LostAndFound.Infrastructure.deps.json
+C:\Users\MinaVictor\.codex\visualizations\2026\10\26\01a1790d-d22f-7a91-a3df-60c56007ab55\LostAndFoundBuildCheck\Debug\net10.0\LostAndFound.Infrastructure.runtimeconfig.json
+C:\Users\MinaVictor\.codex\visualizations\2026\10\26\01a1790d-d22f-7a91-a3df-60c56007ab55\LostAndFoundBuildCheck\Debug\net10.0\LostAndFound.Infrastructure.dll
+C:\Users\MinaVictor\.codex\visualizations\2026\10\26\01a1790d-d22f-7a91-a3df-60c56007ab55\LostAndFoundBuildCheck\Debug\net10.0\LostAndFound.Infrastructure.pdb

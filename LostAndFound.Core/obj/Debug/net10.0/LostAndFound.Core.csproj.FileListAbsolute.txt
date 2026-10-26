@@ -14,3 +14,6 @@ C:\aspnetcore\LostandFound\LostAndFound.Core\obj\Debug\net10.0\ref\LostAndFound.
 C:\Users\MinaVictor\.codex\visualizations\2026\10\18\01a14f43-31b8-7f83-b669-97e3bdb474c6\build\LostAndFound.Core.deps.json
 C:\Users\MinaVictor\.codex\visualizations\2026\10\18\01a14f43-31b8-7f83-b669-97e3bdb474c6\build\LostAndFound.Core.dll
 C:\Users\MinaVictor\.codex\visualizations\2026\10\18\01a14f43-31b8-7f83-b669-97e3bdb474c6\build\LostAndFound.Core.pdb
+C:\Users\MinaVictor\.codex\visualizations\2026\10\26\01a1790d-d22f-7a91-a3df-60c56007ab55\LostAndFoundBuildCheck\Debug\net10.0\LostAndFound.Core.deps.json
+C:\Users\MinaVictor\.codex\visualizations\2026\10\26\01a1790d-d22f-7a91-a3df-60c56007ab55\LostAndFoundBuildCheck\Debug\net10.0\LostAndFound.Core.dll
+C:\Users\MinaVictor\.codex\visualizations\2026\10\26\01a1790d-d22f-7a91-a3df-60c56007ab55\LostAndFoundBuildCheck\Debug\net10.0\LostAndFound.Core.pdb
